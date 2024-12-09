@@ -51,9 +51,7 @@ mongoose.connect(process.env.MONGO_URI, {})
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
-app.use('/lead_files', express.static(path.join(__dirname, 'lead_files')));
-app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use('/uploads', express.static(path.join(__dirname, './uploads')));
+
 // Socket.IO setup
 (async () => {
     const io = await initializeSocket(server); // Await the initialization
